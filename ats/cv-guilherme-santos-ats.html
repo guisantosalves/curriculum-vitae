@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Santos - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm 16mm;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.55;
+            font-size: 13px;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 28px 36px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #333;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 2px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .header .contact {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .header .contact a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .header .contact span {
+            margin: 0 6px;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            margin-bottom: 16px;
+        }
+
+        section > h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #111;
+            border-bottom: 1.5px solid #333;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .summary {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 24px;
+            font-size: 12.5px;
+        }
+
+        .skills-grid .skill-row {
+            display: flex;
+        }
+
+        .skills-grid .skill-label {
+            font-weight: 600;
+            min-width: 155px;
+            color: #222;
+        }
+
+        .skills-grid .skill-value {
+            color: #444;
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .exp-item {
+            margin-bottom: 14px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-header h3 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .exp-header .period {
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .exp-role {
+            font-size: 12.5px;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .exp-item ul {
+            padding-left: 18px;
+        }
+
+        .exp-item li {
+            margin-bottom: 3px;
+            font-size: 12.5px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-item h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #111;
+        }
+
+        .edu-item .details {
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* ===== LANGUAGES ===== */
+        .lang-row {
+            font-size: 12.5px;
+            margin-bottom: 2px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Guilherme Santos</h1>
+        <div class="subtitle">Software Engineer | Full Stack | Microservices Architecture</div>
+        <div class="contact">
+            workguisantos@gmail.com
+            <span>|</span> (69) 98463-6038
+            <span>|</span> <a href="https://www.linkedin.com/in/guilherme-santos-1073b8201/">linkedin.com/in/guilhermesantos</a>
+            <span>|</span> <a href="https://github.com/guisantosalves">github.com/guisantosalves</a>
+        </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section>
+        <h2>Resumo Profissional</h2>
+        <p class="summary">
+            Engenheiro de Software Full Stack com +5 anos de experiência em desenvolvimento de sistemas web e mobile
+            para mercados Brasil e internacional (Portugal). Forte atuação em System Design, Microservices Architecture
+            e design Event-Driven com RabbitMQ. Aplicação rigorosa de SOLID e Design Patterns, com práticas consolidadas
+            de Code Review, CI/CD com GitHub Actions e containerização com Docker.
+            Experiência diversificada em domínios como software fiscal, sistemas financeiros, gestão empresarial e
+            automação de processos. Vivência em Technical Leadership, mentoring e onboarding de desenvolvedores.
+        </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+        <h2>Competências Técnicas</h2>
+        <div class="skills-grid">
+            <div class="skill-row">
+                <span class="skill-label">Back-end:</span>
+                <span class="skill-value">Java, Spring Boot, Node.js, NestJS, Express, C++</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Front-end & Mobile:</span>
+                <span class="skill-value">React, Next.js, TypeScript, Redux, React Native, Ionic, Angular, AngularJS</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Banco de Dados:</span>
+                <span class="skill-value">MongoDB, PostgreSQL, Prisma, JPA, DB2</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Cloud & DevOps:</span>
+                <span class="skill-value">AWS (S3, EC2, CloudFront, SES), Docker, CI/CD, GitHub Actions, Git</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Arquitetura:</span>
+                <span class="skill-value">Microservices, Event-Driven, RabbitMQ, REST API, System Design, SOLID, Design Patterns</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Metodologias & Práticas:</span>
+                <span class="skill-value">Scrum, Kanban, Agile, Code Review, Technical Leadership, Mentoring, Onboarding</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Experiência Profissional</h2>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>ARTSOFT — Lisboa, Portugal (Remoto)</h3>
+                <span class="period">Jan 2023 – Atual</span>
+            </div>
+            <div class="exp-role">Software Engineer — Full Stack</div>
+            <ul>
+                <li>Desenvolvimento de features de integração com a Autoridade Tributária (AT) de Portugal em software fiscal, garantindo conformidade regulatória</li>
+                <li>Atuação em múltiplos produtos: aplicações web com React + Spring Boot, aplicação mobile com Ionic, e correção de serviços legados em C++</li>
+                <li>Implementação de fluxos de automação com N8N para otimização de processos internos</li>
+                <li>Containerização de serviços com Docker e pipelines de CI/CD com GitHub Actions</li>
+                <li>Colaboração com equipes distribuídas em ambiente internacional, participando de Code Reviews e práticas Agile/Scrum</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>NTT DATA — Brasil</h3>
+                <span class="period">Out 2023 – Fev 2024</span>
+            </div>
+            <div class="exp-role">Back-end Engineer</div>
+            <ul>
+                <li>Desenvolvimento de integrações entre sistemas financeiros modernos (Spring Boot) e mainframes COBOL/DB2, permitindo comunicação entre camadas legadas e novas</li>
+                <li>Construção de REST APIs com Node.js/Express para exposição de dados financeiros</li>
+                <li>Atuação em metodologia Scrum dentro de grande operação bancária</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>WMBarros Treinamento em TI</h3>
+                <span class="period">Ago 2023 – Jan 2025</span>
+            </div>
+            <div class="exp-role">Professor de Desenvolvimento Web & Mobile</div>
+            <ul>
+                <li>Planejamento e condução de turma de 6 alunos em desenvolvimento full stack, do zero à construção de um software de prestação de serviços</li>
+                <li>Ensino prático de React Native, Node.js com Express e MongoDB</li>
+                <li>Mentoring e onboarding técnico: orientação de projeto real end-to-end, desde modelagem até deploy</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Alpha Software — Vilhena/RO</h3>
+                <span class="period">Jul 2022 – Dez 2022</span>
+            </div>
+            <div class="exp-role">Full Stack Developer</div>
+            <ul>
+                <li>Desenvolvimento de sistema de gestão empresarial com React e funcionalidades em Visual Basic</li>
+                <li>Criação de aplicação mobile em React Native para pesagem bovina, com integração direta com balança e bastão eletrônico Tru-Test via comunicação serial/Bluetooth</li>
+                <li>Integração hardware-software em contexto de agronegócio</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <h3>Polícia Federal — Vilhena/RO</h3>
+                <span class="period">Jan 2022 – Jul 2022</span>
+            </div>
+            <div class="exp-role">Estagiário de Desenvolvimento</div>
+            <ul>
+                <li>Desenvolvimento de scripts de automação de tarefas com Python, otimizando processos operacionais internos da delegacia</li>
+                <li>Atuação em ambiente institucional com requisitos de segurança e confidencialidade de dados</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <div class="edu-item">
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <div class="details">Instituto Federal de Rondônia — 2021 – 2026 (em curso, último período)</div>
+        </div>
+        <div class="edu-item">
+            <h3>Técnico em Informática</h3>
+            <div class="details">IFRO – Campus Vilhena — 2017 – 2019 | Aluno destaque</div>
+        </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+        <h2>Idiomas</h2>
+        <div class="lang-row"><strong>Português:</strong> Nativo</div>
+        <div class="lang-row"><strong>Inglês:</strong> Avançado (intercâmbio em Paris, França — 2019)</div>
+    </section>
+
+</body>
+</html>

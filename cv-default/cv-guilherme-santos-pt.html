@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guilherme Santos - Software Engineer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #2d2d2d;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 13px;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+      }
+
+      /* ===== SIDEBAR ===== */
+      .sidebar {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        padding: 28px 22px 20px;
+      }
+
+      .sidebar h1 {
+        font-size: 26px;
+        color: #ffffff;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+
+      .sidebar .subtitle {
+        font-size: 13px;
+        color: #7eb8da;
+        font-weight: 400;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 16px;
+      }
+
+      .sidebar-section h2 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #7eb8da;
+        border-bottom: 1px solid #2a2a4a;
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+        font-size: 12px;
+        gap: 8px;
+      }
+
+      .contact-item .label {
+        color: #999;
+        min-width: 52px;
+        font-size: 11px;
+      }
+
+      .contact-item a {
+        color: #e0e0e0;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        color: #7eb8da;
+      }
+
+      .skill-category {
+        margin-bottom: 12px;
+      }
+
+      .skill-category h3 {
+        font-size: 11.5px;
+        color: #ccc;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .tag {
+        background: #2a2a4a;
+        color: #d0d0d0;
+        padding: 3px 9px;
+        border-radius: 3px;
+        font-size: 11px;
+      }
+
+      .lang-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        font-size: 12px;
+      }
+
+      .lang-level {
+        color: #7eb8da;
+        font-size: 11px;
+      }
+
+      .education-item {
+        margin-bottom: 12px;
+      }
+
+      .education-item h3 {
+        font-size: 12.5px;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .education-item .school {
+        font-size: 11.5px;
+        color: #aaa;
+      }
+
+      .education-item .period {
+        font-size: 11px;
+        color: #777;
+      }
+
+      .education-item .note {
+        font-size: 11px;
+        color: #999;
+        font-style: italic;
+      }
+
+      /* ===== MAIN CONTENT ===== */
+      .main {
+        padding: 28px 28px 20px;
+      }
+
+      .main-section {
+        margin-bottom: 16px;
+      }
+
+      .main-section > h2 {
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #1a1a2e;
+        border-bottom: 2px solid #1a1a2e;
+        padding-bottom: 5px;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .summary {
+        font-size: 13px;
+        color: #444;
+        line-height: 1.65;
+      }
+
+      /* Experience */
+      .exp-item {
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+      }
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+
+      .exp-header h3 {
+        font-size: 14px;
+        color: #1a1a2e;
+        font-weight: 700;
+      }
+
+      .exp-header .period {
+        font-size: 11.5px;
+        color: #777;
+        white-space: nowrap;
+      }
+
+      .exp-role {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 6px;
+        font-style: italic;
+      }
+
+      .exp-item ul {
+        padding-left: 18px;
+      }
+
+      .exp-item li {
+        margin-bottom: 4px;
+        font-size: 12.5px;
+        color: #333;
+        line-height: 1.55;
+      }
+
+      .exp-tech {
+        font-size: 11px;
+        color: #777;
+        margin-top: 5px;
+      }
+
+      .exp-tech strong {
+        color: #555;
+      }
+
+      /* Extras */
+      .extra-item {
+        margin-bottom: 6px;
+      }
+
+      .extra-item h3 {
+        font-size: 12.5px;
+        color: #1a1a2e;
+        font-weight: 600;
+      }
+
+      .extra-item p {
+        font-size: 12px;
+        color: #555;
+      }
+
+      @media print {
+        html,
+        body {
+          width: 210mm;
+          height: 297mm;
+          background: #fff;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          color-adjust: exact !important;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 210mm;
+          min-height: 297mm;
+        }
+        .sidebar {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          color-adjust: exact !important;
+          background: #1a1a2e !important;
+          color: #e0e0e0 !important;
+        }
+        .tag {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          background: #2a2a4a !important;
+          color: #d0d0d0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h1>Guilherme Santos</h1>
+        <div class="subtitle">Software Engineer</div>
+
+        <div class="sidebar-section">
+          <h2>Contato</h2>
+          <div class="contact-item">
+            <span class="label">E-mail</span>
+            <span>workguisantos@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Telefone</span>
+            <span>(69) 98463-6038</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/guilherme-santos-1073b8201/"
+              >/in/guilhermesantos</a
+            >
+          </div>
+          <div class="contact-item">
+            <span class="label">GitHub</span>
+            <a href="https://github.com/guisantosalves">/guisantosalves</a>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Competências Técnicas</h2>
+          <div class="skill-category">
+            <h3>Back-end</h3>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">Express</span>
+              <span class="tag">C++</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Front-end & Mobile</h3>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Redux</span>
+              <span class="tag">React Native</span>
+              <span class="tag">Ionic</span>
+              <span class="tag">Angular</span>
+              <span class="tag">AngularJS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Banco de Dados</h3>
+            <div class="tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">JPA</span>
+              <span class="tag">DB2</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Cloud & DevOps</h3>
+            <div class="tags">
+              <span class="tag">AWS S3</span>
+              <span class="tag">EC2</span>
+              <span class="tag">CloudFront</span>
+              <span class="tag">SES</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Arquitetura & Práticas</h3>
+            <div class="tags">
+              <span class="tag">Microsserviços</span>
+              <span class="tag">Event-Driven</span>
+              <span class="tag">RabbitMQ</span>
+              <span class="tag">REST API</span>
+              <span class="tag">System Design</span>
+              <span class="tag">SOLID</span>
+              <span class="tag">Design Patterns</span>
+              <span class="tag">Code Review</span>
+              <span class="tag">N8N</span>
+              <span class="tag">Scrum</span>
+              <span class="tag">Kanban</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Idiomas</h2>
+          <div class="lang-item">
+            <span>Português</span>
+            <span class="lang-level">Nativo</span>
+          </div>
+          <div class="lang-item">
+            <span>Inglês</span>
+            <span class="lang-level">Avançado</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Formação</h2>
+          <div class="education-item">
+            <h3>Análise e Desenv. de Sistemas</h3>
+            <div class="school">Instituto Federal de Rondônia</div>
+            <div class="period">2021 - 2026 (em curso)</div>
+          </div>
+          <div class="education-item">
+            <h3>Técnico em Informática</h3>
+            <div class="school">IFRO - Campus Vilhena</div>
+            <div class="period">2017 - 2019</div>
+            <div class="note">Aluno destaque</div>
+          </div>
+          <div class="education-item">
+            <h3>Intercâmbio de Inglês</h3>
+            <div class="school">Paris, França</div>
+            <div class="period">Novembro 2019</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <div class="main-section">
+          <h2>Resumo Profissional</h2>
+          <p class="summary">
+            Engenheiro de Software Full Stack com +5 anos de experiência em
+            desenvolvimento de sistemas web e mobile para mercados Brasil e
+            internacional (Portugal). Forte atuação em System Design,
+            arquitetura de microsserviços e design event-driven com RabbitMQ.
+            Aplicação rigorosa de SOLID e Design Patterns, com práticas de Code
+            Review, CI/CD com GitHub Actions e containerização com Docker.
+            Experiência diversificada em domínios como software fiscal, sistemas
+            financeiros, gestão empresarial e automação de processos. Vivência
+            em Technical Leadership e mentoria de desenvolvedores.
+          </p>
+        </div>
+
+        <div class="main-section">
+          <h2>Experiência Profissional</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>ARTSOFT &mdash; Lisboa, Portugal (Remoto)</h3>
+              <span class="period">Jan 2023 &ndash; Atual</span>
+            </div>
+            <div class="exp-role">Software Engineer &bull; Full Stack</div>
+            <ul>
+              <li>
+                Desenvolvimento de features de integração com a
+                <strong>Autoridade Tributária (AT) de Portugal</strong> em
+                software fiscal, garantindo conformidade regulatória
+              </li>
+              <li>
+                Atuação em múltiplos produtos e stacks: aplicações web com
+                <strong>React + Spring Boot</strong>, aplicação mobile com
+                <strong>Ionic</strong>, e correção de serviços legados em
+                <strong>C++</strong>
+              </li>
+              <li>
+                Implementação de fluxos de automação com
+                <strong>N8N</strong> para otimização de processos internos
+              </li>
+              <li>
+                Colaboração com equipes distribuídas em ambiente internacional,
+                participando de Code Reviews e práticas Agile/Scrum
+              </li>
+              <li>
+                Containerização de serviços com <strong>Docker</strong> e
+                pipelines de <strong>CI/CD com GitHub Actions</strong>
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <strong>Stack:</strong> React, TypeScript, Spring Boot, Java,
+              Ionic, C++, N8N, Prisma, NestJS, Docker, Git
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>NTT DATA &mdash; Brasil</h3>
+              <span class="period">Out 2023 &ndash; Fev 2024</span>
+            </div>
+            <div class="exp-role">Back-end Engineer</div>
+            <ul>
+              <li>
+                Desenvolvimento de integrações entre sistemas financeiros
+                modernos (<strong>Spring Boot</strong>) e mainframes
+                <strong>COBOL/DB2</strong>, permitindo comunicação entre camadas
+                legadas e novas
+              </li>
+              <li>
+                Construção de APIs REST com
+                <strong>Node.js/Express</strong> para exposição de dados
+                financeiros
+              </li>
+              <li>
+                Atuação em metodologia Scrum dentro de grande operação bancária
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <strong>Stack:</strong> Java, Spring Boot, Node.js, Express,
+              COBOL, DB2, Scrum
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>WMBarros Treinamento em TI</h3>
+              <span class="period">Ago 2023 &ndash; Jan 2025</span>
+            </div>
+            <div class="exp-role">
+              Professor de Desenvolvimento Web & Mobile
+            </div>
+            <ul>
+              <li>
+                Planejamento e condução de turma de <strong>6 alunos</strong> em
+                desenvolvimento full stack, do zero à construção de um software
+                de prestação de serviços
+              </li>
+              <li>
+                Ensino prático de
+                <strong>React Native, Node.js com Express e MongoDB</strong>
+              </li>
+              <li>
+                Orientação de projeto real end-to-end, desde modelagem até
+                deploy
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <strong>Stack:</strong> React Native, Node.js, Express, MongoDB,
+              Next.js, NestJS
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Alpha Software &mdash; Vilhena/RO</h3>
+              <span class="period">Jul 2022 &ndash; Dez 2022</span>
+            </div>
+            <div class="exp-role">Full Stack Developer</div>
+            <ul>
+              <li>
+                Desenvolvimento de
+                <strong>sistema de gestão empresarial</strong> com React e
+                funcionalidades em Visual Basic. Criação de aplicação mobile em
+                <strong>React Native</strong> para pesagem bovina, com
+                integração direta com
+                <strong>balança e bastão eletrônico Tru-Test</strong> via
+                comunicação serial/Bluetooth.
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <strong>Stack:</strong> React, React Native, Redux, TypeScript,
+              NestJS, Visual Basic
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Polícia Federal &mdash; Vilhena/RO</h3>
+              <span class="period">Jan 2022 &ndash; Jul 2022</span>
+            </div>
+            <div class="exp-role">Estagiário de Desenvolvimento</div>
+            <ul>
+              <li>
+                Desenvolvimento de scripts de <strong>automação de tarefas</strong>
+                com <strong>Python</strong>, otimizando processos operacionais
+                internos da delegacia
+              </li>
+              <li>
+                Atuação em ambiente institucional com requisitos de
+                segurança e confidencialidade de dados
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <strong>Stack:</strong> Python
+            </div>
+          </div>
+        </div>
+
+        <div class="main-section">
+          <h2>Destaques</h2>
+          <div class="extra-item">
+            <h3>Arquitetura & Design</h3>
+            <p>
+              Experiência em desenho de arquiteturas de microsserviços e
+              sistemas event-driven com RabbitMQ. Aplicação consistente de
+              princípios SOLID e Design Patterns em projetos de produção.
+            </p>
+          </div>
+          <div class="extra-item">
+            <h3>Experiência Internacional</h3>
+            <p>
+              +3 anos trabalhando remoto para empresa portuguesa (ARTSOFT), com
+              comunicação diária em contexto multicultural. Intercâmbio de
+              inglês em Paris (2019).
+            </p>
+          </div>
+          <div class="extra-item">
+            <h3>Mentoring & Technical Leadership</h3>
+            <p>
+              Experiência como professor e mentor de desenvolvedores, conduzindo
+              onboarding técnico e capacitando profissionais do zero à entrega
+              de software funcional em produção.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
